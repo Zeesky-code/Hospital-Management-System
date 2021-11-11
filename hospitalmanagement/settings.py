@@ -132,3 +132,6 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'static')
 LOGIN_REDIRECT_URL='/afterlogin'
 
 
+if 'DATABASE_URL' in os.environ:
+    import dj_database_url
+    DATABASES = {'default': dj_database_url.config()}
